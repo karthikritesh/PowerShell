@@ -9,7 +9,7 @@ if(($CPU -lt 90) -and ($RAM -gt 5000)){
          }
       until (1 -gt 2)
 }
-if($CPU -gt 90)
+else ($CPU -gt 90)
 {
       Restart computer 01RASPPie
       write-host "Restarting now..."
