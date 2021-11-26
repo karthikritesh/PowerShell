@@ -1,0 +1,16 @@
+if(($CPU -lt 90) -and ($RAM -gt 5000)){
+      Write-host "Raspberry Pi system is perferctly normal."
+      Do
+         {
+     		$RAM= (Get-counter '\Memory\Available Mbytes').CounterSamples.Cookedvalue
+    	  	$CPU= (Get-counter '\Processor(_total)\% Processor Time').CounterSamples.Cookedvalue
+     		write-host "The total RAM left is:"$RAM
+     		write-host "The total CPU consumption is:"$CPU
+         }
+      until (1 -gt 2)
+}
+if($CPU -gt 90)
+{
+      Restart computer 01RASPPie
+      write-host "Restarting now..."
+}
