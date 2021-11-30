@@ -1,0 +1,13 @@
+$Filename= "DevOps.txt"
+Do {
+    if (Get-ChildItem $Filename)
+        {
+           Write-Host "File found"
+        }
+    else {
+        Write-Host "File not found"
+    }
+    
+    Start-Sleep -Seconds 10
+}
+until (Get-ChildItem $Filename)
