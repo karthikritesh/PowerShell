@@ -1,10 +1,15 @@
 $Current_time= get-date -Format "HH:mm"
-$Given_time= "15:00"
+$Given_time= "20:00"
 $Filename= "DevOps.txt"
 Do {
-    Get-ChildItem $Filename
-    Write-Host "File found"
+    if (Get-ChildItem $Filename)
+        {
+           Write-Host "File found"
+        }
+    else {
+        Write-Host "File not found"
+    }
+    
     Start-Sleep -Seconds 10
 }
 until ($Current_time -gt $Given_time)
-
