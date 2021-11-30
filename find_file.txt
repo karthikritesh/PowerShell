@@ -1,0 +1,10 @@
+$Current_time= get-date -Format "HH:mm"
+$Given_time= "15:00"
+$Filename= "DevOps.txt"
+Do {
+    Get-ChildItem $Filename
+    Write-Host "File found"
+    Start-Sleep -Seconds 10
+}
+until ($Current_time -gt $Given_time)
+
