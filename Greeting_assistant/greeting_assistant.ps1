@@ -68,8 +68,6 @@ if($day -eq "Monday")
 
 #starting Chrome
 Start chrome
-#starting Avaya agent
-start-process C:\Users\Public\Desktop\Avaya_agent
 #start virtual machine
 start-process C:\Users\Public\Desktop\VMware_Horizon
 #Stop Teams
