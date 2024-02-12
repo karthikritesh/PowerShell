@@ -68,10 +68,6 @@ if($day -eq "Monday")
 
 #starting Chrome
 Start chrome
-#starting Avaya agent
-start-process C:\Users\Public\Desktop\Avaya_agent
-#start virtual machine
-start-process C:\Users\Public\Desktop\VMware_Horizon
 #Stop Teams
 Get-Process "Teams" -ErrorAction SilentlyContinue | Stop-Process
 # change to the correct directory
@@ -100,7 +96,7 @@ Function Get-Weather {
       
     $ErrorActionPreference = "Stop"
     $WeatherResults = @()
-    $Uri = "https://www.metaweather.com/api/location/search/?query=" + "$City"
+    $Uri = "https://www.weatherbit.io/api/location/search/?query=" + "$City"
      
     Try
     {
@@ -116,7 +112,7 @@ Function Get-Weather {
     {
         $Location = $Location.content | ConvertFrom-Json
         $Woeid = $Location.woeid
-        $WeatherLink = "https://www.metaweather.com/api/location/" + $Woeid + "/"
+        $WeatherLink = "https://www.weatherbit.io/api/location/" + $Woeid + "/"
      
         Try
         {
